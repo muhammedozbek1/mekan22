@@ -1,4 +1,5 @@
 import { ArrowRight, Star, Clock, MapPin, Flame } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -30,12 +31,12 @@ export default function Hero() {
               >
                 Menüyü İncele <ArrowRight size={18} />
               </a>
-              <a
-                href="#siparis"
+              <Link
+                to="/siparis"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-bold transition border border-gray-700"
               >
                 Sipariş Ver
-              </a>
+              </Link>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-400">
@@ -66,9 +67,9 @@ export default function Hero() {
                     <div className="text-white font-bold">Hatay Usulü Tavuk Döner</div>
                     <div className="text-amber-400 font-extrabold text-xl">120 TL</div>
                   </div>
-                  <a href="#menu" className="px-4 py-2 rounded-lg bg-amber-500 text-gray-900 font-bold text-sm">
+                  <Link to="/siparis" className="px-4 py-2 rounded-lg bg-amber-500 text-gray-900 font-bold text-sm">
                     Sipariş Et
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

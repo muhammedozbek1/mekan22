@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Plus, Check } from "lucide-react";
 import { categories, menuItems } from "../data/menu";
+import { useCart } from "../context/CartContext.jsx";
 
-export default function Menu({ onAdd }) {
+export default function Menu() {
+  const { add } = useCart();
+  const onAdd = add;
   const [active, setActive] = useState(categories[0].id);
   const [justAdded, setJustAdded] = useState(null);
 

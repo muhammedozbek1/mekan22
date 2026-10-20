@@ -1,8 +1,12 @@
 import { Phone, ShoppingCart, Menu as MenuIcon, X, Clock, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { PHONE_DISPLAY, WHATSAPP_NUMBER, HOURS } from "../data/menu";
 
-export default function Header({ cartCount, onCartOpen }) {
+import { useCart } from "../context/CartContext.jsx";
+export default function Header() {
+  const { count: cartCount, setCartOpen } = useCart();
+  const onCartOpen = () => setCartOpen(true);
   const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +26,7 @@ export default function Header({ cartCount, onCartOpen }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center font-black text-gray-900 text-lg shadow-lg shadow-amber-500/30">
               22
             </div>
@@ -30,7 +34,7 @@ export default function Header({ cartCount, onCartOpen }) {
               <div className="font-extrabold text-white text-lg tracking-tight">Mekan 22</div>
               <div className="text-[10px] text-gray-400 -mt-1">Edirne • Fast Food</div>
             </div>
-          </a>
+          </Link>
 
           {/* Status + actions (desktop) */}
           <div className="hidden md:flex items-center gap-3">
