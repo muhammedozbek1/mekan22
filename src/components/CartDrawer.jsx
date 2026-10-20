@@ -77,7 +77,7 @@ Not: ${form.notes.trim() || "-"}`;
           ) : (
             cart.map((c) => (
               <div key={c.item.id} className="flex gap-3 bg-gray-800/50 rounded-xl p-3 border border-gray-700/50">
-                <img src={c.item.image} alt={c.item.name} className="w-16 h-16 rounded-lg object-cover shrink-0" />
+                <img src={c.item.image} alt={c.item.name} onError={(e) => { e.target.src = "https://placehold.co/100x100/1f2937/F59E0B?text=22"; }} className="w-16 h-16 rounded-lg object-cover shrink-0" />
                 <div className="flex-1 min-w-0">
                   <div className="text-white font-semibold text-sm leading-tight truncate">{c.item.name}</div>
                   <div className="text-amber-400 font-bold text-sm mt-0.5">{c.item.price} TL</div>

@@ -51,6 +51,7 @@ export default function Menu({ onAdd }) {
                   src={item.image}
                   alt={item.name}
                   loading="lazy"
+                  onError={(e) => { e.target.src = "https://placehold.co/400x300/1f2937/F59E0B?text=Mekan+22"; }}
                   className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                 />
                 <div className="absolute top-3 right-3 bg-gray-900/80 backdrop-blur px-2.5 py-1 rounded-lg text-amber-400 font-extrabold text-sm border border-gray-700">

@@ -54,8 +54,9 @@ export default function Hero() {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden border border-gray-700/50 shadow-2xl shadow-amber-500/10">
               <img
-                src="https://placehold.co/600x450/1f2937/F59E0B?text=Mekan+22+%E2%80%A2+Doner&font=roboto"
+                src="https://images.pexels.com/photos/27744717/pexels-photo-27744717.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop"
                 alt="Mekan 22 Döner"
+                onError={(e) => { e.target.src = "https://placehold.co/600x450/1f2937/F59E0B?text=Mekan+22"; }}
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
