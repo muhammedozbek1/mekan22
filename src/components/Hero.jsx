@@ -37,6 +37,12 @@ export default function Hero() {
               >
                 Sipariş Ver
               </Link>
+              <Link
+                to="/qr-menu"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-bold transition border border-gray-700"
+              >
+                QR Menü
+              </Link>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-400">

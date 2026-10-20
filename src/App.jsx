@@ -6,6 +6,7 @@ import CartDrawer from "./components/CartDrawer.jsx";
 import FloatingCart from "./components/FloatingCart.jsx";
 import Home from "./pages/Home.jsx";
 import Order from "./pages/Order.jsx";
+import QrMenu from "./pages/QrMenu.jsx";
 
 function Layout() {
   const { cart, setCart, cartOpen, setCartOpen, count, total } = useCart();
@@ -16,6 +17,7 @@ function Layout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/siparis" element={<Order />} />
+          <Route path="/qr-menu" element={<QrMenu />} />
         </Routes>
       </main>
       <Footer />
