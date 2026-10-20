@@ -119,12 +119,12 @@ export default function Order() {
         <div className="fixed bottom-4 left-4 right-4 z-40 max-w-4xl mx-auto">
           <button
             onClick={() => setCartOpen(true)}
-            className="w-full flex items-center justify-between gap-3 px-5 py-3.5 rounded-2xl bg-amber-500 text-gray-900 font-bold shadow-2xl shadow-amber-500/40 active:scale-[0.98] transition"
+            className="w-full flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-3 px-5 py-3 rounded-2xl bg-amber-500 text-gray-900 font-bold shadow-2xl shadow-amber-500/40 active:scale-[0.98] transition"
           >
-            <span className="flex items-center gap-2">
-              <ShoppingCart size={20} /> Sepetim ({count})
+            <span className="flex items-center gap-2 text-sm sm:text-base">
+              <ShoppingCart size={18} /> Sepetim ({count})
             </span>
-            <span className="text-lg">{total} TL • Siparişi Tamamla</span>
+            <span className="text-base sm:text-lg">{total} TL • Siparişi Tamamla</span>
           </button>
         </div>
       )}

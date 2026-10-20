@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { CartProvider, useCart } from "./context/CartContext.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
@@ -10,6 +10,8 @@ import QrMenu from "./pages/QrMenu.jsx";
 
 function Layout() {
   const { cart, setCart, cartOpen, setCartOpen, count, total } = useCart();
+  const location = useLocation();
+  const showFloating = location.pathname !== "/siparis" && count > 0;
   return (
     <div className="min-h-screen bg-gray-950 text-white">
       <Header />
@@ -21,7 +23,7 @@ function Layout() {
         </Routes>
       </main>
       <Footer />
-      <FloatingCart count={count} total={total} onClick={() => setCartOpen(true)} />
+      {showFloating && <FloatingCart count={count} total={total} onClick={() => setCartOpen(true)} />}
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} cart={cart} setCart={setCart} />
     </div>
   );
